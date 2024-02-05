@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-ydu%%@0$_mwi!s&25#5u&y2vepnx#5$sgzyt)k^n2sbb=_4ao5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'lectuapi.onrender.com'
+]
 
 
 # Application definition
