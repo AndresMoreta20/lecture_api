@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ydu%%@0$_mwi!s&25#5u&y2vepnx#5$sgzyt)k^n2sbb=_4ao5
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'lectuapi.onrender.com'
+    'https://lectuapi.onrender.com'
 ]
 
 
