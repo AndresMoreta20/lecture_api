@@ -22,14 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ydu%%@0$_mwi!s&25#5u&y2vepnx#5$sgzyt)k^n2sbb=_4ao5'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = [
-    'https://lectuapi.onrender.com'
-]
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -82,8 +80,9 @@ WSGI_APPLICATION = 'mvcapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+database_url = os.environ.get("DATABASE_URL")
 DATABASES = {
-    'default': dj_database_url.parse("postgres://lectuapi_user:uP1267cYM13kIMdwYeQKtanpqrIDd7s9@dpg-cn01p08cmk4c73akj7hg-a.oregon-postgres.render.com/lectuapi")
+    'default': dj_database_url.parse(database_url)
  
 }
 
